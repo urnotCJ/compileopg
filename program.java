@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class program {
     public static void main(String[] args) throws Exception{
-//        File file = new File(args[0]);
         File file = new File(args[0]);
+//        File file = new File("src/work.txt");
         FileReader reader = new FileReader(file);
         BufferedReader breader = new BufferedReader(reader);
         StringBuilder sb = new StringBuilder();
@@ -24,6 +24,12 @@ public class program {
             tokenlength=0;
             while(str.charAt(set)==' '||str.charAt(set)=='\n'||str.charAt(set)=='\r'){
                 set++;
+                if(set>=slength){
+                    break;
+                }
+            }
+            if(set>=slength){
+                break;
             }
             if((str.charAt(set)>='A'&&str.charAt(set)<='Z')||(str.charAt(set)>='a'&&str.charAt(set)<='z')){
                 while((str.charAt(set)>='A'&&str.charAt(set)<='Z')||(str.charAt(set)>='a'&&str.charAt(set)<='z')||(str.charAt(set)>='0'&&str.charAt(set)<='9')){
