@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class program {
     public static void main(String[] args) throws Exception{
-        File file = new File($input);
+        File file = new File(args[0]);
         FileReader reader = new FileReader(file);
         BufferedReader breader = new BufferedReader(reader);
         StringBuilder sb = new StringBuilder();
