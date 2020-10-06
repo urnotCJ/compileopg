@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class program {
     public static void main(String[] args) throws Exception{
-        File file = new File(args[0]);
+//        File file = new File(args[0]);
+        File file = new File("src/work.txt");
         FileReader reader = new FileReader(file);
         BufferedReader breader = new BufferedReader(reader);
         StringBuilder sb = new StringBuilder();
@@ -31,7 +32,12 @@ public class program {
                 }
                 set--;
                 letters = str.substring(set+1-tokenlength,set+1);
-                if(letters.equals("Begin")||letters.equals("End")||letters.equals("For")||letters.equals("If")||letters.equals("Then")||letters.equals("Else")){
+                if(letters.equals("BEGIN")||letters.equals("END")||letters.equals("FOR")||letters.equals("IF")||letters.equals("THEN")||letters.equals("ELSE")){
+                    char[] cs=letters.toCharArray();
+                    for(int i = 1;i < letters.length();i++){
+                        cs[i]+=32;
+                    }
+                    letters = String.valueOf(cs);
                     System.out.println(letters);
                 }
                 else {
