@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class opg {
     public static void main(String[] args) throws Exception{
-        //File file = new File(args[0]);
-        File file = new File("src/work.txt");
+        File file = new File(args[0]);
+        //File file = new File("src/work.txt");
         FileReader reader = new FileReader(file);
         BufferedReader breader = new BufferedReader(reader);
         String sb = "";
