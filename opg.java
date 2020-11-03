@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class opg {
     public static void main(String[] args) throws Exception{
         File file = new File(args[0]);
-        //File file = new File("src/work.txt");
+        // File file = new File("src/work.txt");
         FileReader reader = new FileReader(file);
         BufferedReader breader = new BufferedReader(reader);
         String sb = "";
@@ -51,7 +51,7 @@ public class opg {
             }
         }
         a[j]=0;
-        int seta = 1,setb = 0,setc = 0;
+        int seta = 1,setb = 0,setc = 0,controla=1;
         while(seta<=j&&setb>=0){
             if(fail(a[seta-1],a[seta])==1){
                 setc=1;
@@ -64,9 +64,13 @@ public class opg {
                 System.out.println("Ii");
                 setc++;
                 seta++;
+                controla=1;
             }
             else{
-                System.out.println("R");
+                if(a[seta-1]==3&&controla==1){
+                    System.out.println("R");
+                    controla=0;
+                }
                 if(power(b[setb],a[seta])==1){
                     setb++;
                     b[setb]=a[seta];
@@ -76,6 +80,12 @@ public class opg {
                     }
                     else if (b[setb]==2){
                         System.out.println("I*");
+                    }
+                    else if (b[setb]==4){
+                        System.out.println('(');
+                    }
+                    else if (b[setb]==5){
+                        System.out.println(')');
                     }
                 }
                 else if(power(b[setb],a[seta])==4){
