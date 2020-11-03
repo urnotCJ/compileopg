@@ -52,7 +52,7 @@ public class opg {
         }
         a[j]=0;
         int seta = 1,setb = 0,setc = 0,controla=1;
-        while(seta<=j&&setb>=0){
+        while(seta<=j&&setb>=0&&setc>0){
             if(fail(a[seta-1],a[seta])==1){
                 setc=1;
                 setb=0;
@@ -99,10 +99,9 @@ public class opg {
                     if(power(b[setb],a[seta])==2){
                         setb--;
                         setc--;
-                        if(setc<=0){
+                        if(setc<=0||setb<=0){
                             break;
                         }
-
                         System.out.println("R");
                     }
                     else if (power(b[setb],a[seta])==3){
