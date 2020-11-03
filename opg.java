@@ -51,7 +51,7 @@ public class opg {
             }
         }
         a[j]=0;
-        int seta = 1,setb = 0,setc = 0,controla=1;
+        int seta = 1,setb = 0,setc = 0,controla=1,coc = 0;
         while(seta<=j&&setb>=0){
             if(fail(a[seta-1],a[seta])==1){
                 setc=1;
@@ -65,6 +65,7 @@ public class opg {
                 setc++;
                 seta++;
                 controla=1;
+                coc = 1;
             }
             else{
                 if(a[seta-1]==3&&controla==1){
@@ -80,9 +81,11 @@ public class opg {
                     seta++;
                     if(b[setb]==1){
                         System.out.println("I+");
+                        coc = 0;
                     }
                     else if (b[setb]==2){
                         System.out.println("I*");
+                        coc = 0;
                     }
                     else if (b[setb]==4){
                         System.out.println("I(");
@@ -102,6 +105,9 @@ public class opg {
                 }
                 else{
                     while((power(b[setb],a[seta])==2||power(b[setb],a[seta])==3)){
+                        if(coc==0){
+                            break;
+                        }
                         if(setb==0){
                             break;
                         }
