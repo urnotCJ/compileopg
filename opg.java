@@ -86,7 +86,12 @@ public class opg {
                     }
                 }
                 else if(power(b[setb],a[seta])==4){
-                    System.out.println("E");
+                    if(a[seta]!=0){
+                        System.out.println("E");
+                    }
+                    else {
+                        System.out.println("RE");
+                    }
                     setc=1;
                     setb=0;
                     seta=j;
@@ -125,7 +130,7 @@ public class opg {
         }
     }
     public static int fail(int a,int b){
-        if(a==3&&b==3||a==3&&b==4||a==5&&b==3||a==5&&b==4||a==0&&b==5){
+        if(a==3&&b==3||a==3&&b==4||a==5&&b==3||a==5&&b==4||a==0&&b==5||a==4&&b==0){
             return 1;
         }
         return 0;
