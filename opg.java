@@ -15,6 +15,8 @@ public class opg {
         int c[] = new int[1005];
         a[0] = 0;
         b[0] = 0;
+        int d[] = new int[100];
+        int e[] = new int[100];
         int j = 1;
         while ((sb =breader.readLine()) != null) {
             s = s+sb;
@@ -51,7 +53,7 @@ public class opg {
             }
         }
         a[j]=0;
-        int seta = 1,setb = 0,setc = 0,controla=1;
+        int seta = 1,setb = 0,setc = 0,controla=1,setd=0;
         while(seta<=j&&setb>=0){
             if(fail(a[seta-1],a[seta])==1){
                 setc=1;
@@ -62,6 +64,7 @@ public class opg {
             }
             if(a[seta]==3){
                 System.out.println("Ii");
+                d[setd]++;
                 setc++;
                 seta++;
                 controla=1;
@@ -77,12 +80,15 @@ public class opg {
                     seta++;
                     if(b[setb]==1){
                         System.out.println("I+");
+                        e[setd]++;
                     }
                     else if (b[setb]==2){
                         System.out.println("I*");
+                        e[setd]++;
                     }
                     else if (b[setb]==4){
                         System.out.println("I(");
+                        setd++;
                     }
                 }
                 else if(power(b[setb],a[seta])==4){
@@ -117,6 +123,19 @@ public class opg {
                                 break;
                             }
                             System.out.println("I)\nR");
+                        }
+                        if(a[seta]==5&&d[setd]-1==e[setd]){
+                            d[setd]=0;
+                            e[setd]=0;
+                            setd--;
+                            d[setd]++;
+                        }
+                        else{
+                            System.out.println("RE");
+                            setc=1;
+                            setb=0;
+                            seta=j;
+                            break;
                         }
                     }
                 }
