@@ -52,7 +52,7 @@ public class opg {
         }
         a[j]=0;
         int seta = 1,setb = 0,setc = 0,controla=1;
-        while(seta<=j&&setb>=0&&setc>0){
+        while(seta<=j&&setb>=0&&setc>=0){
             if(fail(a[seta-1],a[seta])==1){
                 setc=1;
                 setb=0;
