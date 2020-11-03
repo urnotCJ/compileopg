@@ -86,31 +86,33 @@ public class opg {
                     }
                 }
                 else if(power(b[setb],a[seta])==4){
-                    System.out.println("RE");
+                    System.out.println("E");
                     setc=1;
                     setb=0;
                     seta=j;
                     break;
                 }
-                while((power(b[setb],a[seta])==2||power(b[setb],a[seta])==3)){
-                    if(setb==0){
-                        break;
-                    }
-                    if(power(b[setb],a[seta])==2){
-                        setb--;
-                        setc--;
-                        if(setc<=0||setb<0){
+                else{
+                    while((power(b[setb],a[seta])==2||power(b[setb],a[seta])==3)){
+                        if(setb==0){
                             break;
                         }
-                        System.out.println("R");
-                    }
-                    else if (power(b[setb],a[seta])==3){
-                        setb--;
-                        seta++;
-                        if(setc<=0||setb<0){
-                            break;
+                        if(power(b[setb],a[seta])==2){
+                            setb--;
+                            setc--;
+                            if(setc<=0||setb<0){
+                                break;
+                            }
+                            System.out.println("R");
                         }
-                        System.out.println("I)\nR");
+                        else if (power(b[setb],a[seta])==3){
+                            setb--;
+                            seta++;
+                            if(setc<=0||setb<0){
+                                break;
+                            }
+                            System.out.println("I)\nR");
+                        }
                     }
                 }
                 if(setb==0&&seta==j){
