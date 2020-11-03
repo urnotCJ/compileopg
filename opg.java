@@ -86,7 +86,7 @@ public class opg {
                     }
                 }
                 else if(power(b[setb],a[seta])==4){
-                    System.out.println("RE");
+                    System.out.println("E");
                     setc=1;
                     setb=0;
                     seta=j;
