@@ -99,7 +99,7 @@ public class opg {
                     if(power(b[setb],a[seta])==2){
                         setb--;
                         setc--;
-                        if(setc<=0||setb<=0){
+                        if(setc<0||setb<=0){
                             break;
                         }
                         System.out.println("R");
